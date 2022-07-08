@@ -9,17 +9,27 @@
 </head>
 <body>
     @if ($makanan == 'Ayam Goreng')
-        harga {{ $makanan }} Rp. 15000
+        Makanan yang di pilih {{ $makanan }}
+        <br>
+        Harga Rp. 15000
     @elseif ($makanan == 'Lobster')
-        harga {{ $makanan }} Rp. 20000
+        Makanan yang di pilih {{ $makanan }}
+        <br>
+        Harga Rp. 20000
     @elseif ($makanan == 'Pizza')
-        harga {{ $makanan }} Rp. 50000
+        Makanan yang di pilih {{ $makanan }}
+        <br>
+        Harga Rp. 50000
     @elseif ($makanan == 'Tiramisu')
-        harga {{ $makanan }} Rp. 30000
+        Makanan yang di pilih {{ $makanan }}
+        <br>
+        Harga Rp. 30000
     @elseif ($makanan == 'Pasta')
-        harga {{ $makanan }} Rp. 25000
+        Makanan yang di pilih {{ $makanan }}
+        <br>
+        Harga Rp. 25000
     @else
-        Tidak Ada Pesanan!
+        Mohon maaf pesanan tidak ada
     @endif
 </body>
 </html>
