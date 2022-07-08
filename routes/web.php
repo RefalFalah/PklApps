@@ -49,6 +49,6 @@ Route::get('/pages/biodata/{nama}/{umur}/{alamat}/{jk}/{kelas}/{hobby}', functio
 });
 
 // Route Opsional Parameter
-Route::get('/pages/pesanan/{makanan?}', function ($makanan = 'Pesanan anda tidak ada!') {
+Route::get('/pages/pesanan/{makanan?}', function ($makanan = 'Pesanan tidak ada') {
     return view('pages.pesanan', compact('makanan'));
 });
