@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <h1>Hallo ini halaman home</h1>
+    Nama Anda : {{ $nama }} <br>
+    Alamat Anda : {{ $alamat }} <br>
+    Umur Anda : {{ $umur }} Tahun
 </body>
 
 </html>

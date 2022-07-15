@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LatihanController;
+use App\Http\Controllers\PengenalanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +21,9 @@ Route::get('/', function () {
 // Route Basic
 Route::get('/belajar', function () {
     echo "<div style='text-decoration: underline; text-align:center'>";
-    echo "<h1>HALO SEMUANYA</h1><br>";
-    echo "<h1>Kami sedang belajar laravel dasar</h1>";
-    echo "</div>";
+    echo '<h1>HALO SEMUANYA</h1><br>';
+    echo '<h1>Kami sedang belajar laravel dasar</h1>';
+    echo '</div>';
 });
 
 // Route Basic View
@@ -49,6 +50,18 @@ Route::get('/pages/biodata/{nama}/{umur}/{alamat}/{jk}/{kelas}/{hobby}', functio
 });
 
 // Route Opsional Parameter
-Route::get('/pages/pesanan/{makanan?}', function ($makanan = 'Pesanan tidak ada') {
-    return view('pages.pesanan', compact('makanan'));
+Route::get('/pages/pesanan/{makanan1?}/{makanan2?}', function ($makanan1 = 'Pesanan tidak ada', $makanan2 = 'Pesanan tidak ada') {
+    return view('pages.pesanan', compact('makanan1', 'makanan2'));
 });
+
+// Passing data dari controllers ke view
+Route::get('/pengenalan', [PengenalanController::class, 'pengenalan']);
+
+// Passing data dinamis (route parameter) dari controllers ke view
+Route::get('/intro/{nama}/{alamat}/{umur}', [PengenalanController::class, 'intro']);
+
+Route::get('/siswa', [PengenalanController::class, 'siswa']);
+
+Route::get('/latihan', [LatihanController::class, 'latihan1']);
+Route::get('/latihan2', [LatihanController::class, 'latihan2']);
+Route::get('/latihan3', [LatihanController::class, 'latihan3']);
