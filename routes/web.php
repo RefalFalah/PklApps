@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\PengenalanController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,3 +67,9 @@ Route::get('/siswa', [PengenalanController::class, 'siswa']);
 Route::get('/latihan', [LatihanController::class, 'latihan1']);
 Route::get('/latihan2', [LatihanController::class, 'latihan2']);
 Route::get('/latihan3', [LatihanController::class, 'latihan3']);
+
+// Route database
+
+// Route::get('/post', [PostController::class, 'index']);
+
+Route::resource('/post', PostController::class);
